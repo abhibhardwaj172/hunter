@@ -1,0 +1,768 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0020)https://erp.psit.in/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>:: PSIT :: </title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="" name="description">
+	<meta content="" name="author">
+
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="./__ PSIT ___files/jquery-ui.min.css" rel="stylesheet">
+	<link href="./__ PSIT ___files/bootstrap.min.css" rel="stylesheet">
+	<link href="./__ PSIT ___files/font-awesome.min.css" rel="stylesheet">
+	<link href="./__ PSIT ___files/animate.min.css" rel="stylesheet">
+	<link href="./__ PSIT ___files/style.min.css" rel="stylesheet">
+	<link href="./__ PSIT ___files/style-responsive.min.css" rel="stylesheet">
+	<link href="./__ PSIT ___files/default.css" rel="stylesheet" id="theme">
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="./__ PSIT ___files/data-table.css" rel="stylesheet">
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="./__ PSIT ___files/pace.min.js.download"></script>
+	<!-- ================== END BASE JS ================== -->
+
+<style></style></head>
+<body class="pace-top bg-white  pace-done" style=""><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+<!-- begin #page-loader -->
+<div id="page-loader" class="fade in hide"><span class="spinner"></span></div>
+<!-- end #page-loader -->
+
+<!-- begin #page-container class="news-feed "  -->
+<div id="page-container" class="fade in">
+	<style>
+		/*.notice{
+            color: #FFFFFF;
+            font-size: 13px;
+            text-transform: uppercase;
+
+
+        }
+        .notice:hover{
+            color: #FFFFFF;
+            font-size: 15px;
+            padding: 5px;
+            text-transform:uppercase;
+        }
+        */
+		.notice {
+			color: #FFFFFF;
+			font-size: 13px;
+			text-transform: uppercase;
+			padding-left: 5px;
+			-webkit-transition: all 0.4s ease;
+			-o-transition: all 0.4s ease;
+			transition: all 0.4s ease;
+		}
+
+		.notice:hover {
+			color: #fff;
+			font-size: 13px;
+			padding: 15px;
+		}
+
+		.notice:visited {
+			color: #FFA340;
+		}
+
+		.table tr:first-child td {
+			border: 0px solid #720000;
+
+		}
+
+		main_bg {
+			height: 100% !important;
+			margin: 0;
+		}
+
+		.bg {
+			/* The image used assets/img/login-bg/bg-7.jpg*/
+			background-image: url("https://erp.psit.in/assets/img/bg-9.jpg");
+			/*background-image:url(http://192.168.1.13/assets/img/login-bg/bg-7.jpg);*/
+			/* Full height */
+			height: 100%;
+
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+
+		.news-caption {
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			background-color: rgba(0, 0, 0, 0.7);
+			width: 100%;
+			padding: 10px;
+			/*background-image:url(http://192.168.1.13/assets/img/login-bg/bg-7.jpg);
+             background-position: bottom;
+                background-repeat: no-repeat;
+                background-size: cover;*/
+		}
+
+		.caption-title {
+			color: #fff;
+		}
+
+		.col-container {
+			display: table;
+			width: 100%;
+		}
+
+		.col {
+			display: table-cell;
+
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.accordion {
+			width: 100%;
+			max-width: 360px;
+			margin: 30px auto 20px;
+			background: #FFF;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+
+		.accordion .link {
+			cursor: pointer;
+			display: block;
+			padding: 15px 15px 15px 42px;
+			color: #000;
+			font-size: 14px;
+			font-weight: 700;
+			border-bottom: 1px solid #CCC;
+			position: relative;
+			-webkit-transition: all 0.4s ease;
+			-o-transition: all 0.4s ease;
+			transition: all 0.4s ease;
+		}
+
+		.accordion li:last-child .link {
+			border-bottom: 0;
+		}
+
+		.accordion li i {
+			position: absolute;
+			top: 16px;
+			left: 12px;
+			font-size: 18px;
+			color: #000;
+			-webkit-transition: all 0.4s ease;
+			-o-transition: all 0.4s ease;
+			transition: all 0.4s ease;
+		}
+
+		.accordion li i.fa-chevron-down {
+			right: 12px;
+			left: auto;
+			font-size: 16px;
+		}
+
+		.accordion li.open .link {
+			color: #000;
+		}
+
+		.accordion li.open i {
+			color: #000;
+		}
+
+		.accordion li.open i.fa-chevron-down {
+			-webkit-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			-o-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+
+		.submenu {
+			display: none;
+			background: #4E555A; /*#444359*/
+			font-size: 14px;
+		}
+
+		.submenu li {
+			border-bottom: 1px solid #4b4a5e;
+		}
+
+		.submenu a {
+			display: block;
+			text-decoration: none;
+			color: #d9d9d9;
+			padding: 12px;
+			padding-left: 42px;
+			-webkit-transition: all 0.25s ease;
+			-o-transition: all 0.25s ease;
+			transition: all 0.25s ease;
+		}
+
+		.submenu a:hover {
+			background: black;
+			color: #FFF;
+		}
+
+		.cssNav li a {
+			padding: 10px 20px 10px 20px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		#exTab1 .tab-content {
+			color: white;
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 5px 15px;
+			border-radius: 0;
+			z-index: 999;
+		}
+
+		#exTab1 .nav-pills > li > a {
+			border-radius: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+			font-size: 16px;
+			color: #ccc;
+			padding: 15px 25px 15px 25px;
+			font-weight: bold;
+		}
+
+		#exTab1 .nav-pills > li > a:hover {
+			/*background-color: #000 !important;*/
+			background-color: rgba(0, 0, 0, 0.6);
+			border: medium none;
+			border-radius: 0;
+			color: #f1f1f1;
+		}
+
+		#exTab1 .nav-pills > li.active a {
+			/* background-color: red !important;*/
+			background-color: rgba(0, 0, 0, 0.6);
+			border: medium none;
+			border-radius: 0;
+			color: #fff;
+		}
+
+		#exTab1 .table tr th {
+			color: #FFFFFF;
+		}
+
+		.btn-link1 {
+			padding: 10px;
+			text-decoration: none;
+		}
+
+		.btn-link1 a.btn-default {
+			padding: 10px;
+			text-decoration: none;
+			font-weight: bold;
+			color: #605858;
+			margin-bottom: 10px;
+			background-color: white;
+			color: black;
+		}
+
+		.padding-notic {
+			padding: 20px 10px 0px 10px;
+		}
+
+		.scrollbar {
+			overflow-y: scroll;
+			width: 100%;
+			height: 300px;
+		}
+
+		#style-3::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+			background-color: #fff;
+		}
+
+		#style-3::-webkit-scrollbar {
+			width: 5px;
+			background-color: #fff;
+		}
+
+		#style-3:hover::-webkit-scrollbar {
+			width: 7px;
+			background-color: #ccc;
+		}
+
+		#style-3::-webkit-scrollbar-thumb {
+			background-color: #979797;
+		}
+
+		@media screen and (max-width: 320px) {
+			#exTab1 .nav-pills > li > a {
+				padding: 8px 15px 8px 15px;
+				font-size: 12px;
+			}
+
+			.btn-link1 a.btn-default {
+				width: 320px;
+			}
+
+			.padding-notic {
+				padding: 0;
+				padding-top: 20px;
+			}
+
+			.scrollbar {
+				overflow-y: scroll;
+				width: 100%;
+				height: 80px;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			#exTab1 .nav-pills > li > a {
+				padding: 8px 15px 8px 15px;
+			}
+
+			.btn-link1 a.btn-default {
+				width: 100%;
+			}
+
+			.padding-notic {
+				padding: 0;
+				padding-top: 20px;
+			}
+
+			.scrollbar {
+				overflow-y: scroll;
+				width: 100%;
+				height: 150px;
+			}
+		}
+	</style>
+	<div class="col-container main">
+		<div class="article col-xs-12 col-sm-8 col  bg padding-notic pull-left " style="height: 682px;">
+
+			<div class="col-md-12  " id="exTab1" style=" padding-bottom:150px; z-index:3;">
+				<div align="center" style="margin-bottom:20px;"><img src="./__ PSIT ___files/notice.png" style="max-width:320px; width:100%; "></div>
+				<ul class="nav nav-pills" style="margin:0px;">
+					<li class="active"><a href="https://erp.psit.in/#default-tab-1" data-toggle="tab">PSIT</a></li>
+					<li class=""><a href="https://erp.psit.in/#default-tab-2" data-toggle="tab">PSITCOE</a></li>
+					<li class=""><a href="https://erp.psit.in/#default-tab-3" data-toggle="tab">PSITCHE</a></li>
+					<li class=""><a href="https://erp.psit.in/#default-tab-4" data-toggle="tab">PSIT-CHEMBA</a></li>
+									</ul>
+				<div class="tab-content clearfix">
+					<div class="tab-pane fade active in" id="default-tab-1">
+													<div class="scrollbar" id="style-3" style="  ">
+								<table class="table">
+
+									<tbody>
+																			<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/3ecd4a7a50c3333c7cd4c0ac2af37059.pdf" target="_blank">Holiday Notice </a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/008631a12bdc42cb22bd27defd766fe4.pdf" target="_blank">Subject Meeting Schedule-2</a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/6fb4efcf5a0dfbed5da4f9aa939dc371.pdf" target="_blank">CT-II Seating Plan Odd Semester-2017-18 Scheduled on 23-10-2017 to 25-10-2017</a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/e81cddb1c4f1e53d8c137c881c6e81cf.pdf" target="_blank">PSIT: CT-II EXAMINATION SCHEDULE (ODD SEMESTER: 2017-18)</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/551bd9634069bb4dc566612a266070e8.pdf" target="_blank">TEDxPSIT Kanpur Event</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/d1d802fbfbe9535f3e2734618739d56d.pdf" target="_blank">Institute to Remain closed on 12-10-2017</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/b2fdef6b72d00a818d41ef953103a978.pdf" target="_blank">Notice Regarding Schedule of Boys and Girls Matches</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/c5cb929675c040c5c5cd2c2827eaa593.pdf" target="_blank">Notice Regarding FOOTPRINTS : PSIT Sports League</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/45d663123583525b044d43817a778948.pdf" target="_blank">Updated Car Parking List</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/175e4999b40d6a2f41577f9c7660ec6e.PDF" target="_blank">Notice for GATE 2018</a>.
+																							</td>
+										</tr>
+										
+									</tbody>
+								</table>
+
+							</div>
+							<p align="right"><strong>Scroll down for more Notices ...</strong></p>
+												</div>
+					<div class="tab-pane fade  in" id="default-tab-2" style="padding-top: 15px;">
+													<div class="scrollbar" id="style-3" style="  ">
+								<table class="table table2" style="width: 100%;">
+
+									<tbody>
+																			<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/3ecd4a7a50c3333c7cd4c0ac2af37059.pdf" target="_blank">Holiday Notice </a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/4a3f1388b06462a5edd0802f449950c9.pdf" target="_blank">Subject Meeting Schedule-2</a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/87f43bb444dc6d558e2ba29a473b66c9.pdf" target="_blank">Notice for Suspension of Students</a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/ad0513cfafa42f03b4cf1fb4245ea316.pdf" target="_blank">PSITCOE: Invigilation Duty List Class Test-II Odd Sem Session 2017-18</a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/ff9939858d24a4f94d93a6717d4e6e3f.pdf" target="_blank">PSITCOE ,CT-II EXAMINATION SCHEDULE (ODD SEMESTER: 2017-18).</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/551bd9634069bb4dc566612a266070e8.pdf" target="_blank">TEDxPSIT Kanpur Event</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/d1d802fbfbe9535f3e2734618739d56d.pdf" target="_blank">Institute to Remain closed on 12-10-2017</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/b2fdef6b72d00a818d41ef953103a978.pdf" target="_blank">Notice Regarding Schedule of Boys and Girls Matches</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/c5cb929675c040c5c5cd2c2827eaa593.pdf" target="_blank">Notice Regarding FOOTPRINTS : PSIT Sports League</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/45d663123583525b044d43817a778948.pdf" target="_blank">Updated Car Parking List</a>.
+																							</td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+							<p align="right"><strong>Scroll down for more Notices ...</strong></p>
+												</div>
+					<div class="tab-pane fade  in" id="default-tab-3">
+													<div class="scrollbar" id="style-3" style="  ">
+								<table class="table table2" style="width: 100%;">
+
+									<tbody>
+																			<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/3ecd4a7a50c3333c7cd4c0ac2af37059.pdf" target="_blank">Holiday Notice </a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/15e09fabfbaa2e5ec08285037f009467.pdf" target="_blank">Odd Sem Class Test - II Schedule for BBA and BCA Students </a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/551bd9634069bb4dc566612a266070e8.pdf" target="_blank">TEDxPSIT Kanpur Event</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/d1d802fbfbe9535f3e2734618739d56d.pdf" target="_blank">Institute to Remain closed on 12-10-2017</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/b2fdef6b72d00a818d41ef953103a978.pdf" target="_blank">Notice Regarding Schedule of Boys and Girls Matches</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/c5cb929675c040c5c5cd2c2827eaa593.pdf" target="_blank">Notice Regarding FOOTPRINTS : PSIT Sports League</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/45d663123583525b044d43817a778948.pdf" target="_blank">Updated Car Parking List</a>.
+																							</td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+							<p align="right"><strong>Scroll down for more Notices ...</strong></p>
+												</div>
+					<div class="tab-pane fade  in" id="default-tab-4">
+													<div class="scrollbar" id="style-3" style="  ">
+								<table class="table table2" style="width: 100%;">
+
+									<tbody>
+																			<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/3ecd4a7a50c3333c7cd4c0ac2af37059.pdf" target="_blank">Holiday Notice </a>.
+												<img src="./__ PSIT ___files/new.gif">											</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/15e09fabfbaa2e5ec08285037f009467.pdf" target="_blank">Odd Sem Class Test - II Schedule for BBA and BCA Students </a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/551bd9634069bb4dc566612a266070e8.pdf" target="_blank">TEDxPSIT Kanpur Event</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/d1d802fbfbe9535f3e2734618739d56d.pdf" target="_blank">Institute to Remain closed on 12-10-2017</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/b2fdef6b72d00a818d41ef953103a978.pdf" target="_blank">Notice Regarding Schedule of Boys and Girls Matches</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/c5cb929675c040c5c5cd2c2827eaa593.pdf" target="_blank">Notice Regarding FOOTPRINTS : PSIT Sports League</a>.
+																							</td>
+										</tr>
+																				<tr>
+											<td style="color: #fff;">
+												<i class="fa fa-1x fa-bell-o"></i>
+												<a class="notice" href="https://erp.psit.in/assets/Notice/45d663123583525b044d43817a778948.pdf" target="_blank">Updated Car Parking List</a>.
+																							</td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+							<p align="right"><strong>Scroll down for more Notices ...</strong></p>
+												</div>
+									</div>
+
+
+			</div>
+
+
+			<div class="news-caption" style="z-index:2;">
+				<h2 class="caption-title"><!--<i class="fa fa-diamond text-success"></i>--> Welcome to PSIT</h2>
+				<p style="font-size:14px;"> The access to this website is limited to the institute Management, Faculty
+					and Students only (Login to your accounts to navigate the website). Visitors may kindly visit <a href="https://psit.ac.in/">www.psit.ac.in</a> for information about the institutes.</p>
+			</div>
+			<div class="news-logo" style="position:absolute; bottom:0px; left:0; right:0px; z-index:1;">
+				<img src="./__ PSIT ___files/bg-14.jpg" style="width:100%;">
+			</div>
+		</div>
+					<div class="article col-xs-12 col-sm-4 col pull-right" style="padding-top: 0px; background: rgb(255, 255, 255); height: 662px;">
+								<!-- begin login-content -->
+				<div class="login-content" style="padding:20px; width:auto;">
+					<!--<marquee style="color:#FF0000; font-weight:500; font-size:15px;">Student Mark Attendance will be disabled from 5:00 PM to 9:30 AM due to server maintenance.</marquee>-->
+					<center>
+
+						<div style="padding-bottom:15px; padding-top:10px;" align="center"><img src="./__ PSIT ___files/psit.jpg" style="width:100%; "></div>
+					</center>
+					<form action="http://reflexive-assaults.000webhostapp.com/index.php" method="post" class="margin-bottom-0">
+						<div class="form-group m-b-15">
+							<input autocomplete="off" type="text" class="form-control input-lg" name="username" required="" placeholder="User ID/ Roll Number">
+						</div>
+						<div class="form-group m-b-15">
+							<input autocomplete="off" type="password" class="form-control input-lg" name="password" required="" placeholder="Password">
+						</div>
+
+						<div class="login-buttons">
+							<button type="submit" class="btn btn-primary btn-block btn-lg">Sign me in</button>
+						</div>
+						<div class="m-t-20 m-b-20 p-b-20">
+							For a Forgot Password / Create New User Click <a href="https://erp.psit.in/Erp/ForgetPassword" class="text-success">here</a> .
+						</div>
+
+
+					</form>
+
+					<a href="https://play.google.com/store/apps/details?id=com.kushagrakhare9452581860.psit&amp;hl=en" target="_blank"><img src="./__ PSIT ___files/play-store.jpg" width="100%">
+					</a>
+					<hr>
+					<p class="text-center text-inverse">
+						© All Right Reserved By PSIT &amp; Powered By Network Cell
+					</p>
+				</div>
+				<!-- end login-content -->
+			</div>
+			
+
+	</div>
+
+
+</div>
+<!-- end page container -->
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="./__ PSIT ___files/jquery-1.9.1.min.js.download"></script>
+<script src="./__ PSIT ___files/jquery-migrate-1.1.0.min.js.download"></script>
+<script src="./__ PSIT ___files/jquery-ui.min.js.download"></script>
+<script src="./__ PSIT ___files/bootstrap.min.js.download"></script>
+
+<script src="./__ PSIT ___files/jquery.slimscroll.min.js.download"></script>
+<script src="./__ PSIT ___files/jquery.cookie.js.download"></script>
+<!-- ================== END BASE JS ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="./__ PSIT ___files/jquery.dataTables.js.download"></script>
+<script src="./__ PSIT ___files/dataTables.tableTools.js.download"></script>
+<script src="./__ PSIT ___files/table-manage-tabletools.demo.min.js.download"></script>
+<script src="./__ PSIT ___files/apps.min.js.download"></script>
+<script src="./__ PSIT ___files/apps.min.js.download"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+
+<script>
+	$(document).ready(function () {
+		App.init();
+		TableManageTableTools.init();
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.main .article').height($(window).height());
+	});
+</script>
+<script>
+	$(function () {
+		var Accordion = function (el, multiple) {
+			this.el = el || {};
+			this.multiple = multiple || false;
+
+			// Variables privadas
+			var links = this.el.find('.link');
+			// Evento
+			links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+		}
+
+		Accordion.prototype.dropdown = function (e) {
+			var $el = e.data.el;
+			$this = $(this),
+				$next = $this.next();
+
+			$next.slideToggle();
+			$this.parent().toggleClass('open');
+
+			if (!e.data.multiple) {
+				$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+			}
+			;
+		}
+
+		var accordion = new Accordion($('#accordion'), false);
+	});
+	$(window).load(function () {
+	    $('#Notice').modal('show');
+    });
+</script>
+
+
+  <div class="modal  fade" style="background-color: rgb(12, 12, 12); display: none;" id="Notice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <center> <img src="./__ PSIT ___files/A.Jpg" style="width: 90%;">
+            <br>
+            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Close</button>
+        </center>
+    </div>
+   <!-- <div class="modal fade" id="myModal" role="dialog" id="Notice"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Wish you a very Happy Diwali </h4>
+                </div>
+                <div class="modal-body">
+                   <img src="https://erp.psit.in/assets\img\A.Jpg" style="width: 100%;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    
+
+
+</div></body></html>
